@@ -1,10 +1,12 @@
 import React from 'react';
+
 import './Component.css';
+
+const title = 'Your fibonacci number:';
 
 const FibonacciScreen = ({ fibonacciNumber }) => (
   <div>
-    your fibonacci number:
-    {fibonacciNumber}
+    {`${title} ${fibonacciNumber}`}
   </div>
 );
 

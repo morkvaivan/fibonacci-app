@@ -1,45 +1,101 @@
 import React, { Component } from 'react';
 
+import FormValidator from '../../services/FormValidator';
+
+import {
+  INITIAL_INPUT_NUMBER_VALUE,
+  MIN_POSITIVE_INTEGER,
+} from '../../constants';
+
 import './Component.css';
 
 class FibonacciForm extends Component {
   constructor() {
     super();
 
-    this.state = { value: '' };
+    this.validator = new FormValidator([
+      { 
+        field: 'number', 
+        method: 'isEmpty', 
+        validWhen: false, 
+        message: 'Integer is required.' 
+      },
+      { 
+        field: 'number',
+        method: 'isInt',
+        // args is an optional array of arguments that
+        // will be passed to the validation method
+        args: [{
+          min: MIN_POSITIVE_INTEGER,
+          allow_leading_zeroes: false,
+        }],
+        validWhen: true, 
+        message: 'That is not a valid integer.'
+      },
+    ]);
+
+    this.state = {
+      number: INITIAL_INPUT_NUMBER_VALUE,
+      validation: this.validator.valid(),
+    };
   }
 
-  handleChange = (event) => {
+  handleInputChange = (event) => {
+    event.preventDefault();
+
     this.setState({
-      value: event.target.value,
+      [event.target.name]: event.target.value,
     });
   }
 
   handleSubmit = (event) => {
     event.preventDefault();
 
-    const positiveInteger = Math.abs(parseInt(this.state.value, 10));
-    console.log('positiveInteger:', positiveInteger);
+    const validation = this.validator.validate(this.state);
+    
+    this.setState({ validation });
 
-    this.props.onSubmit(positiveInteger);
+    if (validation.isValid) {
+      this.props.onSubmit(this.state.number);
 
-    this.setState({
-      value: '',
-    });
+      this.setState({
+        number: INITIAL_INPUT_NUMBER_VALUE,
+      });
+    }
   }
 
   render() {
+    const validation = this.state.validation;
+
+    const inputNumberPlaceholder = '12';
+    const inputNumberLabel =
+      'Enter your positive integer to get its Fibonacci number: ';
+    const inputNumberWrapperClassName = validation.number.isInvalid
+      ? 'input-number-wrapper has-error'
+      : 'input-number-wrapper';
+
     return (
-      <form onSubmit={this.handleSubmit}>
-        
-        <label>
-          Enter your input to get its Fibonacci number:
+      <form onSubmit={this.handleSubmit}>  
+
+        <div className={inputNumberWrapperClassName}>
+          <label htmlFor="inputNumber">
+            {inputNumberLabel}
+          </label>
+
           <input
+            id="inputNumber"
             type="text"
-            value={this.state.value}
-            onChange={this.handleChange}
+            name="number"
+            value={this.state.number}
+            onChange={this.handleInputChange}
+            placeholder={inputNumberPlaceholder}
           />
-        </label>
+
+          <span className="help-block">
+            {validation.number.message}
+          </span>
+        </div>
+
         <input
           type="submit"
           value="Submit"
