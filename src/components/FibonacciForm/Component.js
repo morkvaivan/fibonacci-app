@@ -75,10 +75,16 @@ class FibonacciForm extends Component {
       : 'input-number-wrapper';
 
     return (
-      <form onSubmit={this.handleSubmit}>  
+      <form
+        onSubmit={this.handleSubmit}
+      >  
 
-        <div className={inputNumberWrapperClassName}>
-          <label htmlFor="inputNumber">
+        <div
+          className={inputNumberWrapperClassName}
+        >
+          <label
+            htmlFor="inputNumber"
+          >
             {inputNumberLabel}
           </label>
 
@@ -91,7 +97,9 @@ class FibonacciForm extends Component {
             placeholder={inputNumberPlaceholder}
           />
 
-          <span className="help-block">
+          <span
+            className="help-block"
+          >
             {validation.number.message}
           </span>
         </div>
