@@ -1,0 +1,19 @@
+.Footer {
+  background-color: #222;
+  padding: 20px;
+  color: white;
+}
+
+.Footer-logo {
+  animation: Header-logo-spin infinite 20s linear;
+  height: 20px;
+}
+
+.Footer-title {
+  font-size: 1em;
+}
+
+@keyframes Header-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}

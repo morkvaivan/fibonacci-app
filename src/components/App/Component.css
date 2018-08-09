@@ -1,0 +1,11 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.App-intro {
+  font-size: large;
+}
