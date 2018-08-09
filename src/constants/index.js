@@ -1,0 +1,3 @@
+export const MIN_POSITIVE_INTEGER = 1;
+export const INITIAL_INPUT_NUMBER_VALUE = '';
+export const INITIAL_FIBONACCI_NUMBER_VALUE = '';
