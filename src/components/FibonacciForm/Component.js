@@ -69,7 +69,7 @@ class FibonacciForm extends Component {
 
     const inputNumberPlaceholder = '12';
     const inputNumberLabel =
-      'Enter your positive integer to get its Fibonacci number: ';
+      'Submit your positive integer to get its Fibonacci number: ';
     const inputNumberWrapperClassName = validation.number.isInvalid
       ? 'input-number-wrapper has-error'
       : 'input-number-wrapper';
