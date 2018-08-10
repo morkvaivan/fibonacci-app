@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import Footer from './Component';
 
 it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Footer />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  shallow(<Footer />);
 });

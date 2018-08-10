@@ -23,6 +23,10 @@ class App extends Component {
     };
   }
 
+  /**
+   * @param {number} number 
+   * @returns {Promise}
+   */
   computeFibonacciNumberAsynchronously = (number) => new Promise(resolve => {
     setTimeout(() => {
       const fibonacciNumber = this.fibonacci.computeFibonacciNumber(number);
