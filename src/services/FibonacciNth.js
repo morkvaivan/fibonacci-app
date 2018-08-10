@@ -20,6 +20,8 @@ class FibonacciNth {
    * Space Complexity:
    * O(1)
    * 
+   * TODO: refactor to O(log n) implementation
+   * 
    * @param {number} number
    * @return {number}
    */
