@@ -25,7 +25,7 @@ class FormValidator {
 
         // call the validationMethod with the current field value as the first
         // argument, any additional arguments, and the whole state as a final
-        // argument.  If the result doesn't match the rule.validWhen property,
+        // argument. If the result doesn't match the rule.validWhen property,
         // then modify the validation object for the field and set the isValid
         // field to false
         if(validationMethod(fieldValue, ...args, state) !== rule.validWhen) {
