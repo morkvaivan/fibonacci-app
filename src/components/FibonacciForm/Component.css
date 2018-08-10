@@ -1,7 +1,3 @@
-.FibonacciForm {
-  background-color: aqua;
-}
-
 .input-number-wrapper {
   display: flex;
   flex-direction: column;
@@ -12,10 +8,11 @@
   width: 200px;
 }
 
-.has-error {
+.has-error input {
   border: 2px solid red;
 }
 
 .help-block {
+  color: red;
   font-style: italic;
 }

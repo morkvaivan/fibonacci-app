@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import FormValidator from '../../services/FormValidator';
 
@@ -112,5 +113,9 @@ class FibonacciForm extends Component {
     );
   }
 }
+
+FibonacciForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+};
 
 export default FibonacciForm;
