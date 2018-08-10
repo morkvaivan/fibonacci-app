@@ -41,6 +41,10 @@ class FibonacciForm extends Component {
     };
   }
 
+  /**
+   * @param {SyntheticEvent} event 
+   * @returns {void}
+   */
   handleInputChange = (event) => {
     event.preventDefault();
 
@@ -49,6 +53,10 @@ class FibonacciForm extends Component {
     });
   }
 
+  /**
+   * @param {SyntheticEvent} event 
+   * @returns {void}
+   */
   handleSubmit = (event) => {
     event.preventDefault();
 

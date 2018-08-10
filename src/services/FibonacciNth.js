@@ -15,7 +15,7 @@ class FibonacciNth {
    * Space Optimized Dynamic Programming approach.
    *
    * Time Complexity:
-   * O(n),
+   * O(n)
    * 
    * Space Complexity:
    * O(1)

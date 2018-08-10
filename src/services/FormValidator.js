@@ -6,6 +6,12 @@ class FormValidator {
     this.validations = validations;
   }
 
+  /**
+   * Validate state of a form.
+   * 
+   * @param {object} state 
+   * @returns {object}
+   */
   validate(state) {
     // start out assuming valid
     let validation = this.valid();
@@ -42,6 +48,11 @@ class FormValidator {
     return validation;
   }
 
+  /**
+   * Make validation and all rules valid
+   * 
+   * @returns {object}
+   */
   valid() {
     const validation = {}
 
