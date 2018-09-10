@@ -35,17 +35,6 @@ class App extends Component {
   });
 
   /**
-   * I call setState 2 times to show a user loading spinner
-   * (for now it is just words) because when we compute a number
-   * like `1000000000000` it takes a lot of time and the page is frozen.
-   * To solve this problem in more advance way I would use multithreading
-   * via Web Worker API but it needs more time.
-   * 
-   * Also it's good to add a spinner component and its functionality as a HOC.
-   * 
-   * To call setState 2 times in this method I've created
-   * computeFibonacciNumberAsynchronously as async function.
-   * 
    * @param {string} validInputValue
    * @return {void}
    */
